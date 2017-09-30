@@ -10,7 +10,7 @@
     width: 25px;
     height: 25px;
     padding: 0;
-    border: 1px solid black;
+    border: 1px solid #86CADB;
 }
 
 td.ship {
@@ -18,5 +18,5 @@ td.ship {
 }
 
 td.water {
-    background-color: lightblue;
+    background-color: #1C3680;
 }
