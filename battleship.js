@@ -26,6 +26,9 @@ $(() => {
   }
 
   $('#generate').click(() => {
+    // Tip: It is ok to add console.log statements during development. However, you should never
+    // leave unnecessary log statements in the code you finally check in. That is considered
+    // bad practice. Not critical here in school, could annoy colleagues in practice.
     console.log(0);
     for(var i = 0; i < 10;i++){
       console.log(8);
@@ -35,6 +38,8 @@ $(() => {
       }
     }
     console.log('x');
+    // Consider using Array.forEach (https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+    // instead of custom for loop.
     for(var i = 0; i < ships.length; i++){
       console.log(1);
       while(true){
@@ -42,6 +47,7 @@ $(() => {
         x = Math.floor(Math.random()*10);
         y = Math.floor(Math.random()*10);
         r = Math.floor(Math.random()*4);
+        // Consider replacing this construct with a do...while loop.
         if(putShip(ships[i],x,y,r)){
           break;
         }
@@ -51,6 +57,8 @@ $(() => {
   });
 });
 
+// Nice, recursive solution. However, I am not convinced that in this case a recursive
+// algorithm is ideal. Without recursion, you would not need the firstCall parameter.
 function putShip(shipLength=1,x=0,y=0,r=NORTH,firstCall=true){
   if(isOccupied(x,y) || neighbourCount(x,y) > 1){
     return false;
